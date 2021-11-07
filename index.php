@@ -17,9 +17,6 @@
         <li><h1><?= $a['titre']?></h1>
         <nav class="modsup">
             <a href="./View/article.php?id=<?= $a['id']?>"> Afficher </a>
-            <a href="./View/redaction.php?edit=<?= $a['id']?>"> Modifier </a>
-            <a href="Model/supprimer.php?id=<?= $a['id']?>" onclick="return confirm('Etes-vous sûr de vouloir supprimer l\'article?')"> Supprimer  </a> </br></br> 
-   
         </nav>
             <p maxlength="20"><?= $a['contenu']?></p> </li>
         <?php } ?>

@@ -8,6 +8,7 @@ require '../Model/categories.php';
     <meta charset="utf-8">
 	<title>Infos du jour</title>
 	<link rel="stylesheet" type="text/css" href="../assets/index.css">
+    <link rel="stylesheet" type="text/css" href="../assets/pagination.css">
 </head>
 <body>
     <div id="entete">
@@ -35,6 +36,9 @@ require '../Model/categories.php';
         <?php } ?>
         <ul>
     </div> 
-    <?php require './pagination.php'; ?>
+    <div class="pages">
+        <a href="#" class="previous">&laquo; Précédent</a>
+        <a href="#" class="next">Suivant &raquo;</a>
+    </div>
 </body>
 </html>
