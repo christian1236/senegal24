@@ -5,23 +5,9 @@
 </head>
 <body>
 <?php
-require('../authentification/config.php');
+require('../../Model/auth/config.php');
 
 if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['type'], $_REQUEST['password'])){
-
-    // Informations d'identification
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'mglsi_news');
- 
-// Connexion � la base de donn�es MySQL 
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-// V�rifier la connexion
-if($conn === false){
-    die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
-}
   // récupérer le nom d'utilisateur 
   $username = stripslashes($_REQUEST['username']);
   $username = mysqli_real_escape_string($conn, $username); 
@@ -69,8 +55,7 @@ if($conn === false){
   
     <input type="submit" name="submit" value="+ Add" class="box-button" />
 </form>
-<?php 
- var_dump($type, $email, $password);
+<?php
 } ?>
 </body>
 </html>

@@ -26,6 +26,6 @@
             <?php } ?>
         <div class="animation start-home"></div>
         
-    </nav>   
+    </nav>
 </body>
 </html>
