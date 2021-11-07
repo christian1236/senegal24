@@ -4,9 +4,9 @@
 
 
 
-[SiteWeb] (https://github.com/boubacar96/Projet_AGL_Groupe11/tree/SiteWeb)
-[ServicesWeb] (https://github.com/boubacar96/Projet_AGL_Groupe11/tree/ServicesWeb)
-[ClientJava] (https://github.com/boubacar96/Projet_AGL_Groupe11/tree/ClientJava)
+[SiteWeb] (https://github.com/christian1236/senegal24/tree/desktopapp)
+[ServicesWeb] (https://github.com/christian1236/senegal24/tree/WepApp)
+[ClientJava] (https://github.com/christian1236/senegal24/tree/servicesweb)
 
 
 Site Web
