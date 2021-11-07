@@ -4,9 +4,9 @@
 
 
 
-[SiteWeb] (https://github.com/christian1236/senegal24/tree/desktopapp)
-[ServicesWeb] (https://github.com/christian1236/senegal24/tree/WepApp)
-[ClientJava] (https://github.com/christian1236/senegal24/tree/servicesweb)
+[DesktopApp] (https://github.com/christian1236/senegal24/tree/desktopapp)
+[WebApp] (https://github.com/christian1236/senegal24/tree/WepApp)
+[servicesweb] (https://github.com/christian1236/senegal24/tree/servicesweb)
 
 
 Site Web
