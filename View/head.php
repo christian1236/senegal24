@@ -13,6 +13,7 @@
 <div class="auth">   
 <a href="View/authentification/login.php">Connexion</a>
 <a href="View/authentification/register.php">Inscription</a>
+<a href="View/admin/login.php">Admin</a>
 </div>
 <div id="entete">
         <h1>Bienvenue sur Sénégal24 </h1>

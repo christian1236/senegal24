@@ -17,13 +17,14 @@ if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
       
       $article_titre = htmlspecialchars($_POST['article_titre']);
       $article_contenu = htmlspecialchars($_POST['article_contenu']);
+      $article_categorie = htmlspecialchars($_POST['article_categorie']);
       if($mode_edition == 0) {
-         $ins = $bdd->prepare('INSERT INTO Article (titre, contenu, dateCreation) VALUES (?, ?, NOW())');
-         $ins->execute(array($article_titre, $article_contenu));
+         $ins = $bdd->prepare('INSERT INTO Article (titre, contenu, dateCreation, categorie) VALUES (?, ?, NOW(),?)');
+         $ins->execute(array($article_titre, $article_contenu, $article_categorie));
          $message = 'Votre article a bien été posté';
       } else {
-         $update = $bdd->prepare('UPDATE Article SET titre = ?, contenu = ?, dateModification = NOW() WHERE id = ?');
-         $update->execute(array($article_titre, $article_contenu, $edit_id));
+         $update = $bdd->prepare('UPDATE Article SET titre = ?, contenu = ?, dateModification = NOW(), categorie = ?, WHERE id = ?');
+         $update->execute(array($article_titre, $article_contenu, $article_categorie, $edit_id));
          header('Location: http://localhost:8888/aL/index.php?id='.$edit_id);
          $message = 'Votre article a bien été mis à jour !';
       }

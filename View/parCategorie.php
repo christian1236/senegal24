@@ -35,5 +35,6 @@ require '../Model/categories.php';
         <?php } ?>
         <ul>
     </div> 
+    <?php require './pagination.php'; ?>
 </body>
 </html>

@@ -13,12 +13,14 @@ if (isset($_POST['username'])){
 	$username = mysqli_real_escape_string(mysqli_connect('localhost', 'root', 'root', 'mglsi_news'), $username);
 	$password = stripslashes($_REQUEST['password']);
 	$password = mysqli_real_escape_string(mysqli_connect('localhost', 'root', 'root', 'mglsi_news'), $password);
-    $query = "SELECT * FROM `users` WHERE username='$username' and password='".hash('sha256', $password)."'";
+	// $password = stripslashes($_REQUEST['type']);
+	// $type = mysqli_real_escape_string(mysqli_connect('localhost', 'root', 'root', 'mglsi_news'), $type);
+    $query = "SELECT * FROM `users` WHERE username='$username' and type='admin' and password='".hash('sha256', $password)."'" ;
 	$result = mysqli_query(mysqli_connect('localhost', 'root', 'root', 'mglsi_news'),$query) or die(mysql_error());
 	$rows = mysqli_num_rows($result);
 	if($rows==1){
 	    $_SESSION['username'] = $username;
-	    header("Location: ../editor/home.php");
+	    header("Location: ../admin/home.php");
 	}else{
 		$message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
 	}

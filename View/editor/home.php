@@ -1,35 +1,40 @@
 ﻿<?php
+    require '../../Model/editor/home.php';
+
     require '../../Model/config.php';
     require '../../Model/index.php';
 ?>
-<?php
-	// Initialiser la session
-	session_start();
-	// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-	if(!isset($_SESSION["username"])){
-		header("Location: login.php");
-		exit(); 
-	}
-?>
+
 
 <!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<title>Infos du jour</title>
-	<link rel="stylesheet" href="../../assets/style.css" />
+	<link rel="stylesheet" href="../../assets/pagination.css" />
 	<link rel="stylesheet" type="text/css" href="../../assets/index.css">
 	</head>
 	<body>
-		
+	<div class="auth">   
+<a href="View/authentification/logout.php">Déconnexion</a>
+</div>
+<div id="entete">
+        <h1>Bienvenue sur Sénégal24 </h1>
+    </div> 
+    <nav class="menu">
+        <a href="../../index.php">Home</a>
+        <a href="View/redaction.php">Ajouter</a>
+        <?php while($a = $categories->fetch()) { ?>
+            <a href="./View/parCategorie.php?id=<?= $a['id'] ?>"><?= $a['libelle'] ?></a>
+            <?php } ?>
+        <div class="animation start-home"></div>
+        
+    </nav>   
 	<div class="sucess">
+	
 		<h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
-		<p>C'est votre tableau de bord.</p>
-		<a href="logout.php">Déconnexion</a>
-		</div>
-
-	<?php require_once '../head.php'; ?>
-    <div class="article">
+	
+		<div class="article">
         <ul>
         <?php while($a = $articles->fetch()) { ?>
         <li><h1><?= $a['titre']?></h1>
@@ -43,7 +48,15 @@
         <?php } ?>
         <ul>
     </div> 
-    <?php require_once '../pagination.php'; ?>
+	
+	</div>
+	<div class="pages">
+        <a href="#" class="previous">&laquo; Précédent</a>
+        <a href="#" class="next">Suivant &raquo;</a>
+    </div>
+	
+    
+
 		
 
 	</body>
