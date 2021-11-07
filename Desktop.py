@@ -15,24 +15,24 @@ class AdminWindow(QWidget):
         self.resize(500, 500)
         self.setAutoFillBackground(True)
         p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.darkCyan)
+        p.setColor(self.backgroundRole(), Qt.gray)
         self.setPalette(p)
         layout = QGridLayout()
 
         self.add_user = QPushButton("Ajouter Utilisateur ")
         self.add_user.clicked.connect(self.show_add_user)
-        layout.addWidget(self.add_user, 1, 1)
-        layout.setRowMinimumHeight(2, 75)
+        layout.addWidget(self.add_user, 0, 1)
+        layout.setRowMinimumHeight(4, 75)
 
         self.list_user = QPushButton("Lister Utilisateur ")
         self.list_user.clicked.connect(self.show_list_user)
-        layout.addWidget(self.list_user, 2, 1)
-        layout.setRowMinimumHeight(2, 75)
+        layout.addWidget(self.list_user, 0, 2)
+        layout.setRowMinimumHeight(4, 75)
 
         self.quit = QPushButton("Quitter ")
         self.quit.clicked.connect(self.show_quit)
-        layout.addWidget(self.quit, 4, 1)
-        layout.setRowMinimumHeight(2, 75)
+        layout.addWidget(self.quit, 2, 1)
+        layout.setRowMinimumHeight(4, 75)
         self.setLayout(layout)
 
     def show_add_user(self, checked):
@@ -59,43 +59,43 @@ class MainWindow(QWidget):
         self.w = None
 
         self.setWindowTitle('Pages Dactualités')
-        self.resize(300, 200)
+        self.resize(300, 300)
         self.setAutoFillBackground(True)
         p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.darkCyan)
+        p.setColor(self.backgroundRole(), Qt.gray)
         self.setPalette(p)
         layout = QGridLayout()
 
         label = QLabel()
-        pixmap = QPixmap('./logo.png')
+        pixmap = QPixmap('./logo2.png')
         pixmap = pixmap.scaled(50, 50)
         label.setPixmap(pixmap)
-        layout.addWidget(label, 0, 1)
+        layout.addWidget(label, 0, 0)
         label.setAlignment(Qt.AlignCenter)
 
-        label_name = QLabel('<font size="4"> Login </font>')
+        label_name = QLabel('<font size="5"> Login </font>')
         self.lineEdit_username = QLineEdit()
         self.lineEdit_username.setPlaceholderText('Entrez votre login')
         layout.addWidget(label_name, 1, 0)
-        layout.addWidget(self.lineEdit_username, 1, 1)
+        layout.addWidget(self.lineEdit_username, 2, 0)
 
-        label_password = QLabel('<font size="4"> Mot de passe </font>')
+        label_password = QLabel('<font size="5"> Mot de passe </font>')
         self.lineEdit_password = QLineEdit()
         self.lineEdit_password.setPlaceholderText('Votre mot de passe ')
-        layout.addWidget(label_password, 2, 0)
-        layout.addWidget(self.lineEdit_password, 2, 1)
+        layout.addWidget(label_password, 3, 0)
+        layout.addWidget(self.lineEdit_password, 4, 0)
 
         button_login = QPushButton('Connexion')
         button_login.clicked.connect(self.show_new_window)
 
-        layout.addWidget(button_login, 3, 1)
-        layout.setRowMinimumHeight(2, 75)
+        layout.addWidget(button_login, 5, 0)
+        layout.setRowMinimumHeight(5, 75)
 
         self.setLayout(layout)
 
     def show_new_window(self, checked):
         msg = QMessageBox()
-        if self.lineEdit_username.text() == 'L' and self.lineEdit_password.text() == 'p':
+        if self.lineEdit_username.text() == 'admin' and self.lineEdit_password.text() == 'admin':
             if self.w is None:
                 self.w = AdminWindow()
             self.w.show()
@@ -112,7 +112,7 @@ class Add_User(QWidget):
         self.resize(500, 500)
         self.setAutoFillBackground(True)
         p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.darkCyan)
+        p.setColor(self.backgroundRole(), Qt.gray)
         self.setPalette(p)
         layout = QGridLayout()
 
@@ -204,7 +204,7 @@ class List_User(QWidget):
         self.resize(500, 500)
         self.setAutoFillBackground(True)
         p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.darkCyan)
+        p.setColor(self.backgroundRole(), Qt.gray)
         self.setPalette(p)
 
         self.createTable()
@@ -225,15 +225,15 @@ class List_User(QWidget):
         self.tableWidget.setItem(0, 0, QTableWidgetItem("matricule"))
         self.tableWidget.setItem(0, 1, QTableWidgetItem("Login"))
         self.tableWidget.setItem(0, 2, QTableWidgetItem("password"))
-        self.tableWidget.setItem(1, 0, QTableWidgetItem("DD4"))
-        self.tableWidget.setItem(1, 1, QTableWidgetItem("DIOUF"))
-        self.tableWidget.setItem(1, 2, QTableWidgetItem("DD14"))
-        self.tableWidget.setItem(2, 0, QTableWidgetItem("Baye5"))
-        self.tableWidget.setItem(2, 1, QTableWidgetItem("BAYEDIEYEBA"))
-        self.tableWidget.setItem(2, 2, QTableWidgetItem("BDBFATOUSHA"))
-        self.tableWidget.setItem(3, 0, QTableWidgetItem("Christian4"))
-        self.tableWidget.setItem(3, 1, QTableWidgetItem("Simonetti"))
-        self.tableWidget.setItem(3, 2, QTableWidgetItem("CSPOUYE3"))
+        self.tableWidget.setItem(1, 0, QTableWidgetItem("bara22"))
+        self.tableWidget.setItem(1, 1, QTableWidgetItem("bara"))
+        self.tableWidget.setItem(1, 2, QTableWidgetItem("passer"))
+        self.tableWidget.setItem(2, 0, QTableWidgetItem("cheikh12345"))
+        self.tableWidget.setItem(2, 1, QTableWidgetItem("cheikh"))
+        self.tableWidget.setItem(2, 2, QTableWidgetItem("passer"))
+        self.tableWidget.setItem(3, 0, QTableWidgetItem("Chris22"))
+        self.tableWidget.setItem(3, 1, QTableWidgetItem("chris"))
+        self.tableWidget.setItem(3, 2, QTableWidgetItem("passer"))
 
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
