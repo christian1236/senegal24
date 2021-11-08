@@ -2,6 +2,10 @@
 
 ## L’objectif de ce projet est de mettre en oeuvre les compétences acquises dans le cours d’architecture logicielle. Il est découpé en trois parties que vous devrez faire intégralement
 
+## Lien Youtube : https://www.youtube.com/watch?v=DprCewyu_R4
+
+
+
 
 
 [DesktopApp] (https://github.com/christian1236/senegal24/tree/desktopapp)
